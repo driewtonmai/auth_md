@@ -1,5 +1,7 @@
 from django.db import models
 
+from .validators import validate_date_of_birth_no_future
+
 
 class Diagnose(models.Model):
     """Model for diagnoses"""
@@ -17,8 +19,10 @@ class Diagnose(models.Model):
 class Patient(models.Model):
     """Model for patients"""
 
-    date_of_birth = models.DateField('date of birth')
-    diagnoses = models.ManyToManyField(Diagnose, verbose_name='diagnoses', related_name='patients')
+    date_of_birth = models.DateField('date of birth',
+                                     validators=[validate_date_of_birth_no_future])
+    diagnoses = models.ManyToManyField(Diagnose,
+                                       verbose_name='diagnoses', related_name='patients', null=True, blank=True)
     created_at = models.DateTimeField('date of creation', auto_now_add=True)
 
     def __str__(self):
