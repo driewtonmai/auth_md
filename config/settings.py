@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
     # local-apps
     'authentication.apps.AuthenticationConfig',
+    'patients.apps.PatientsConfig',
 ]
 
 MIDDLEWARE = [
