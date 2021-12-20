@@ -4,7 +4,7 @@ from .validators import validate_date_of_birth_no_future, validate_date_of_birth
 
 
 class Diagnose(models.Model):
-    """Model for diagnoses"""
+    """Model for diagnoses."""
 
     name = models.CharField('name', max_length=70, unique=True)
 
@@ -17,7 +17,7 @@ class Diagnose(models.Model):
 
 
 class Patient(models.Model):
-    """Model for patients"""
+    """Model for patients."""
 
     date_of_birth = models.DateField('date of birth',
                                      validators=[validate_date_of_birth_no_future, validate_date_of_birth_max_age])
