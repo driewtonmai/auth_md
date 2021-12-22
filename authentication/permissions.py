@@ -14,7 +14,6 @@ class IsDoctorUser(permissions.BasePermission):
             return
 
         if decoded_token.get('is_doctor'):
-            print(decoded_token.get('is_doctor'))
             return True
 
 
