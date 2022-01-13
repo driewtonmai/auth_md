@@ -31,7 +31,7 @@ https://documenter.getpostman.com/view/9317614/UVRBm5p1
 
 ## Built With
 
-Django, django rest framework
+Django, django-rest-framework
 
 ### Authors
 
